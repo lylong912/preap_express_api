@@ -101,6 +101,10 @@ Route::delete('wishlist/remove/{id}', 'App\Http\Controllers\WishlistController@r
 Route::post('wishlist/cart', 'App\Http\Controllers\WishlistController@moveToCart');
 
 
+//delivery
+Route::get('delivery/history', 'App\Http\Controllers\DeliveryController@getDelivery');
+Route::get('delivery', 'App\Http\Controllers\DeliveryController@getDeliveryType');
+Route::post('delivery/add', 'App\Http\Controllers\DeliveryController@addDelivery');
 
 Route::apiResource("menber",'App\Http\Controllers\MenberController@index');
 
