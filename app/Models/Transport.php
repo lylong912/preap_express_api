@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Delivery extends Model
+class Transport extends Model
 {
     use HasFactory;
-    
-    protected $table = 'delivery_process';
+    protected $table = 'sma_transports';
     protected $guarded = [];
     protected $fillable = ['customer_id','pickup_name','id'];
-  
-    public function data()
+    public function transport()
     {
-        return $this->belongsTo('App\Models\Transport');
+        return $this->hasMany('App\Models\Delivery');
     }
 }
